@@ -1,6 +1,10 @@
 package com.image.ImageProject.service;
 
+import com.image.ImageProject.SearchCriteria;
+import com.image.ImageProject.UserSpecification;
 import com.image.ImageProject.model.Image;
+import com.image.ImageProject.model.Tag;
+import com.image.ImageProject.repository.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

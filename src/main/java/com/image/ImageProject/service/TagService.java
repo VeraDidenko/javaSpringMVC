@@ -5,7 +5,7 @@ import com.image.ImageProject.model.Tag;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-public interface GenreService {
+public interface TagService {
 
     List<Tag> findAll();
     LinkedHashMap<String, String> getTagsMap();
