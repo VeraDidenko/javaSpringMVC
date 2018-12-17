@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "\"Account\"")
+@Table(name = "account")
 public class Account {
 
     @Id

@@ -43,19 +43,16 @@
 
     <div class="filters">
 
-        <form method="GET" action="${contextPath}/filterContent" class="form-signin">
+        <form method="GET" action="${contextPath}/filterImage" class="form-signin">
 
             <h2 style="text-align: center; padding-bottom: 10px; margin-top: 0px">Filtering the content</h2>
             <input name="author" type="text" class="form-control" placeholder="Enter author"
                    autofocus="true"/>
-            <input name="headline" type="text" class="form-control" placeholder="Enter headline"/>
 
-            <input name="date" type="date" class="form-control" placeholder="Pick up date"/>
-
-            <select name="genre" style="margin-top: 10px; width: 200px; height: 40px;">
+            <select name="tag" style="margin-top: 10px; width: 200px; height: 40px;">
                 <option value="0">Not selected</option>
                 <c:forEach var="option" items="${options}">
-                    <option value="${option.genreID}">${option.genreName}</option>
+                    <option value="${option.tagID}">${option.tagName}</option>
                 </c:forEach>
             </select>
 
@@ -70,7 +67,7 @@
         <div class="row">
             <div class="col-xs-12 panel-style">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background-color:#abeabe">${subList.headline}</div>
+                    <div class="panel-heading" style="background-color:#abeabe">${subList.imageName}</div>
                     <div class="panel-body">
                             ${subList.author}
                     </div>
@@ -78,7 +75,7 @@
                 </div>
 
                 <form method="GET" action="${contextPath}/showOne">
-                    <input hidden type="text" name="contentID" value="${subList.contentID}">
+                    <input hidden type="text" name="imageID" value="${subList.imageID}">
                     <button type="submit" class="btn btn-default" style="background-color:#33bf71; color: #fff">Show
                         story
                     </button>

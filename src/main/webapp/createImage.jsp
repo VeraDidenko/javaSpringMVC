@@ -36,7 +36,7 @@
         </form>
     </div>
 
-    <form:form method="POST" action="${contextPath}/createNew" modelAttribute="contentForm" class="form-signin">
+    <form:form method="POST" action="${contextPath}/createNew" modelAttribute="imageForm" class="form-signin">
         <h2 class="form-signin-heading">Create your own story</h2>
 
         <spring:bind path="headline">
@@ -55,7 +55,7 @@
             </div>
         </spring:bind>
 
-        <form:select multiple="multiple" path="genres">
+        <form:select multiple="multiple" path="tags">
             <form:options items="${options}"/>
         </form:select>
 

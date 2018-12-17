@@ -41,12 +41,11 @@
         <div class="col-xs-12">
             <div class="panel panel-default">
 
-                <div class="panel-heading" style="background-color:#abeabe"> ${content.headline}</div>
+                <div class="panel-heading" style="background-color:#abeabe"> ${image.image_name}</div>
                 <div class="panel-body">
-                    ${content.text}
+                    ${image.description}
                 </div>
-                <div class="panel-footer" style="background-color:#abeabe"> ${content.date}</div>
-                <div class="panel-footer" style="background-color:#33bf71; color: #fff"> ${content.author}</div>
+                <div class="panel-footer" style="background-color:#33bf71; color: #fff"> ${image.author}</div>
             </div>
         </div>
 
@@ -55,17 +54,17 @@
     <div class="row">
         <div class="col-xs-12 ">
             <div class="panel panel-default">
-                <div class="panel-heading" style="background-color:#abeabe">Genres</div>
-                <c:forEach var="genre" items="${content.genres}">
+                <div class="panel-heading" style="background-color:#abeabe">Tags</div>
+                <c:forEach var="tag" items="${image.tags}">
                     <div class="panel-body">
-                            ${genre.genreName}
+                            ${tag.tagName}
                     </div>
                 </c:forEach>
             </div>
         </div>
     </div>
 
-    <form method="POST" action="${contextPath}/addReview">
+    <form method="POST" action="${contextPath}/addRating">
 
         <div style="margin-top: 15px;">
 
@@ -95,7 +94,7 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <textarea type="text" class="form-control" placeholder="Review text"
+                    <textarea type="text" class="form-control" placeholder="Rating comment"
                               autofocus="true" name="reviewText" style="height:150px;resize:none"></textarea>
 
                 </div>
@@ -107,7 +106,7 @@
                 </div>
             </div>
 
-            <input type="hidden" name="contentID" class="form-control" value="${content.contentID}"/>
+            <input type="hidden" name="imageID" class="form-control" value="${image.imageID}"/>
 
             <div class="${error != null ? 'has-error' : ''}">
                 <span>${error}</span>
@@ -124,18 +123,18 @@
     </form>
 
     <div style="margin-top: 60px">
-        <c:forEach var="review" items="${reviews}">
+        <c:forEach var="rating" items="${ratings}">
 
             <div class="panel panel-default" style="margin: 20px;">
                 <div class="panel-body" style="background-color:#abeabe">
-                    Mark: ${review.mark}
+                    Mark: ${rating.mark}
                 </div>
                 <div class="panel-body">
-                        ${review.reviewText}
+                        ${rating.comment}
                 </div>
                 <div class="panel-footer" style="background-color:#33bf71; color: #fff">
-                        ${review.account.firstName}
-                        ${review.account.secondName}</div>
+                        ${rating.account.firstName}
+                        ${rating.account.surname}</div>
             </div>
         </c:forEach>
     </div>
